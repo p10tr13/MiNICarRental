@@ -225,9 +225,6 @@ namespace MiniCarRentalAPI.Migrations
                     b.Property<bool>("IsInsurance")
                         .HasColumnType("bit");
 
-                    b.Property<int>("OfferHashID")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("PricePerDay")
                         .HasColumnType("money");
 
