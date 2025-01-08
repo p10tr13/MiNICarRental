@@ -197,8 +197,8 @@ namespace MiniCarRentalAPI.Migrations
                     b.Property<bool>("IsInsurance")
                         .HasColumnType("bit");
 
-                    b.Property<int>("OfferHashID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("OfferGuid")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<float>("Price")
                         .HasColumnType("real");
