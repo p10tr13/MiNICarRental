@@ -35,6 +35,9 @@ namespace MiNICarRentalBrowser.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CarID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DownloadedDate")
                         .HasColumnType("datetime2");
 
