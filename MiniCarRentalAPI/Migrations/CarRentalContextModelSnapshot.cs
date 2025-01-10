@@ -58,6 +58,34 @@ namespace MiniCarRentalAPI.Migrations
                     b.ToTable("Acceptations");
                 });
 
+            modelBuilder.Entity("SharedDataModels.ApiEntity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("ApiID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ApiKeyHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ApiKeySalt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("URL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("ApiEntities");
+                });
+
             modelBuilder.Entity("SharedDataModels.Brand", b =>
                 {
                     b.Property<int>("ID")
