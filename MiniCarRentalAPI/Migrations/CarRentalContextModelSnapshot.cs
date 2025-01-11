@@ -262,17 +262,6 @@ namespace MiniCarRentalAPI.Migrations
                     b.Property<DateTime>("ReturnDate")
                         .HasColumnType("datetime2");
 
-                    b.ComplexProperty<Dictionary<string, object>>("Location", "SharedDataModels.Return.Location#Location", b1 =>
-                        {
-                            b1.IsRequired();
-
-                            b1.Property<float>("Latitude")
-                                .HasColumnType("real");
-
-                            b1.Property<float>("Longitude")
-                                .HasColumnType("real");
-                        });
-
                     b.HasKey("ID");
 
                     b.HasIndex("RentalID")
