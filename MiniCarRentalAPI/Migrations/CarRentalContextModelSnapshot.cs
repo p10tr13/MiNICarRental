@@ -58,34 +58,6 @@ namespace MiniCarRentalAPI.Migrations
                     b.ToTable("Acceptations");
                 });
 
-            modelBuilder.Entity("SharedDataModels.ApiEntity", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("ApiID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ApiKeyHash")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ApiKeySalt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("URL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("ApiEntities");
-                });
-
             modelBuilder.Entity("SharedDataModels.Brand", b =>
                 {
                     b.Property<int>("ID")
@@ -292,17 +264,6 @@ namespace MiniCarRentalAPI.Migrations
 
                     b.Property<DateTime>("ReturnDate")
                         .HasColumnType("datetime2");
-
-                    b.ComplexProperty<Dictionary<string, object>>("Location", "SharedDataModels.Return.Location#Location", b1 =>
-                        {
-                            b1.IsRequired();
-
-                            b1.Property<float>("Latitude")
-                                .HasColumnType("real");
-
-                            b1.Property<float>("Longitude")
-                                .HasColumnType("real");
-                        });
 
                     b.HasKey("ID");
 
