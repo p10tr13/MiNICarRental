@@ -22,39 +22,6 @@ namespace MiNICarRentalBrowser.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SharedDataModels.CarCache", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("BrandName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DownloadedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModelName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductionYear")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SourceApiID")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("CarsCache");
-                });
-
             modelBuilder.Entity("SharedDataModels.Employee", b =>
                 {
                     b.Property<int>("ID")
