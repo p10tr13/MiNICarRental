@@ -62,7 +62,7 @@ namespace MiNICarRentalBrowser.Migrations
                     b.Property<int>("ApiID")
                         .HasColumnType("int");
 
-                    b.Property<int>("SourceApiID")
+                    b.Property<int>("RentalID")
                         .HasColumnType("int");
 
                     b.Property<int>("UserID")
