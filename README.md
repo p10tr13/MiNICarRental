@@ -41,6 +41,10 @@ flowchart TD
     API2 --> DB2[DB 2]
     API3 --> DB3[DB 3]
 ```
+## Running the project
+
+The application ran on Azure resources created for the course (App Service, Azure SQL, Key Vault, Blob Storage, Redis), together with car rental APIs of other student teams. These were shut down after the semester, and both apps load their configuration from that Key Vault at startup, so the project no longer runs as it is. Running it again would need your own Azure Key Vault (or user secrets) with the database, Redis, Blob Storage, SendGrid and OAuth settings. The solution still builds with `dotnet build MiNICarRental.sln`.
+
 ## My Contribution 💼
 - Designed and implemented following pages: **car browser**, **rental history for both client and employee**, **error** and **layouts**
 - Integrated **Redis** caching layer
